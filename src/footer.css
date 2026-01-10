@@ -1,0 +1,7 @@
+.footer-Image {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  width: 100%;             /* Parent width */
+  overflow: hidden;        /* Prevents image from spilling out */
+}
