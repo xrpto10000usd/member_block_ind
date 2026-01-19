@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import  LoginFront from './comm/loginFront.js';
 import  Layout from './comm/layout.js';
 import  MainFront from './main/mainFront.js';
+import  MainFooterLayout from './comm/mainFooter.js';
 import * as auth from './util/auth';
 /*
 function App() {
@@ -28,17 +29,18 @@ function App() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />} >
-        {/* Matches /comm/anything, /comm/a/b/c, etc. */}
-          <Route path="/comm/loginFront" element={<LoginFront />} action={auth.loginAction} />
-        </Route>
-        <Route>
-          <Route path="/main/mainFront" element={<MainFront />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+          <BrowserRouter>
+            <Routes>
+              <Route element={<Layout />} >
+              {/* Matches /comm/anything, /comm/a/b/c, etc. */}
+                <Route path="/comm/loginFront" element={<LoginFront />} action={auth.loginAction} />
+                <Route path="/" element={<LoginFront />} action={auth.loginAction} />
+              </Route>
+              <Route element={<MainFooterLayout />}>
+                <Route path="/main/mainFront" element={<MainFront />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
   );
 }
 
