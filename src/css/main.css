@@ -1,0 +1,7 @@
+.nav-item {
+    width: 33%;
+}
+
+.nav-item > button {
+    width : 100%;
+}

@@ -3,7 +3,7 @@ import Image from 'react-bootstrap/Image';
 import { Outlet } from "react-router-dom";
 import '../footer.css';
 
-export default function Layout() {
+export default function LoginLayout() {
   return (
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
         <main style={{ flex: 1 }}>
