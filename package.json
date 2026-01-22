@@ -24,9 +24,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://chickenrobotnono.github.io/xrpto10000usd",
+  "homepage": "https://xrpto10000usd.github.io/member_block_ind/",
   "eslintConfig": {
     "extends": [
       "react-app",
