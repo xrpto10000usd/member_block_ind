@@ -1,8 +1,7 @@
-import logo from '../member-block-logo.png';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
-import '../css/App.css';
+import '../../css/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function LoginFront() {
@@ -10,7 +9,7 @@ function LoginFront() {
   return (
     <div>
       <div className='Login-Front-Image'>
-        <Image src={logo}  fluid  />
+        <Image src='../..//member-block-logo.png'  fluid  />
       </div>
         <Form action="/main/mainFront">
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -28,9 +27,12 @@ function LoginFront() {
             <Button variant="primary" type="submit">
               LOGIN
             </Button>
-            <Button variant="secondary" style={{ marginLeft: "10%" }}>
+            <Button variant="secondary" style={{ marginLeft: "5%" , marginRight: "2%" }}>
               REGISTER
             </Button>
+            <a href='*'><span className="auth find">FORGOT MY ID </span></a>
+            <span>/</span>
+            <a href='*'><span className="auth find"> FORGOT MY Password </span></a>
           </div>
         </Form>
   </div>

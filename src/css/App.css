@@ -31,3 +31,10 @@
 @keyframes App-logo-spin {}
 
 .mb-3 { max-width: 75%; margin-left : 10%; }
+
+.auth.find { font-size : smaller; }
+
+.Login-Front-Image {     display: flex;          /* 1. Use Flexbox layout */
+                         justify-content: center; /* 2. Horizontally center the content */
+                         align-items: center;    /* 3. Vertically center the content */}
+

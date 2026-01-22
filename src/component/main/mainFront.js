@@ -3,7 +3,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import MemberShipStockList from './mainMemberShipStockList';
 import MemberShipPurchaseRequestList from './mainMemberShipPurchaseRequestList';
-import '../css/main.css';
+import '../../css/main.css';
 
 export default function MainFront() {
 
@@ -15,13 +15,13 @@ export default function MainFront() {
               onSelect={(k) => setKey(k)}
               className="mb-3" 
               style={{ marginLeft : "0px" }}>
-              <Tab eventKey="memstocks" title="Your Memberships" className="controlled-tab-header-contents">
+              <Tab eventKey="memstocks" title="Your Memberships" className="main-tab-header-contents">
                     <MemberShipStockList />
               </Tab>
-              <Tab eventKey="memRequests" title="Purchase Request" className="controlled-tab-header-contents">
+              <Tab eventKey="memRequests" title="Purchase Request" className="main-tab-header-contents">
                     <MemberShipPurchaseRequestList />
               </Tab>
-              <Tab eventKey="memSellRequests" title="Selling" className="controlled-tab-header-contents">
+              <Tab eventKey="memSellRequests" title="Selling" className="main-tab-header-contents">
               </Tab>
         </Tabs>
     

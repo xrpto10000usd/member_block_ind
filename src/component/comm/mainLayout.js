@@ -2,10 +2,11 @@ import { Outlet } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import '../footer.css';
+import '../../css/footer.css';
+import * as render from '../../js/util/render';
 
 export default function MainLayout() {
+
   return (
     <div>
         <div>
@@ -17,6 +18,7 @@ export default function MainLayout() {
                     <Nav className="me-auto">
                         <Nav.Link href="#home">Account</Nav.Link>
                         <Nav.Link href="#link">Settings</Nav.Link>
+                        {/*
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -26,6 +28,7 @@ export default function MainLayout() {
                             Separated link
                         </NavDropdown.Item>
                         </NavDropdown>
+                        */}
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -38,7 +41,7 @@ export default function MainLayout() {
         </div>
         <div>
             <nav class="bottom-nav">
-                <a href="#home" class="nav-item">
+                <a href="#Market" class="nav-item" onClick={render.bottomBarNavigation}>
                     <span class="icon">🏠</span>
                     <span class="label">Market</span>
                 </a>
@@ -46,7 +49,7 @@ export default function MainLayout() {
                     <span class="icon">🔍</span>
                     <span class="label">Search</span>
                 </a>
-                <a href="#profile" class="nav-item">
+                <a href="#profile" class="nav-item" onClick={render.bottomBarNavigation}>
                     <span class="icon">👤</span>
                     <span class="label">My Info</span>
                 </a>

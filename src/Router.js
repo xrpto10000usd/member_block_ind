@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route , Navigate } from 'react-router-dom';
-import  LoginFront from './comm/loginFront.js';
-import  LoginLayout from './comm/loginLayout.js';
-import  MainFront from './main/mainFront.js';
-import  MainLayout from './comm/mainLayout.js';
-import * as auth from './util/auth.js';
+import  LoginFront from './component/comm/loginFront.js';
+import  LoginLayout from './component/comm/loginLayout.js';
+import  MainFront from './component/main/mainFront.js';
+import  MainLayout from './component/comm/mainLayout.js';
+import * as auth from './js/util/auth.js';
 
 function memberBlockRouter() {
   return (
@@ -16,6 +16,7 @@ function memberBlockRouter() {
               </Route>
               <Route element={<MainLayout />}>
                 <Route path="/main/mainFront" element={<MainFront />} />
+                <Route path="/main/marketFront" element={<MainFront />} />
               </Route>
             </Routes>
           </BrowserRouter>
