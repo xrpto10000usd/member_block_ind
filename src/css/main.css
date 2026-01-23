@@ -10,6 +10,12 @@
     height: 20%; width:30%;
 }
 
-.main-tab-header-contents {
-    
+#controlled-tab-example-tab-memstocks {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.main.search.box {
+    margin-top: 5px; margin-bottom: 5px;
 }

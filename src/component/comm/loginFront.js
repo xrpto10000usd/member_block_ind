@@ -9,9 +9,9 @@ function LoginFront() {
   return (
     <div>
       <div className='Login-Front-Image'>
-        <Image src='../..//member-block-logo.png'  fluid  />
+        <Image src='../../member_block_ind/images/member-block-logo.png'  fluid  />
       </div>
-        <Form action="/main/mainFront">
+        <Form action="/member_block_ind/main/mainFront">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" placeholder="Enter email" />

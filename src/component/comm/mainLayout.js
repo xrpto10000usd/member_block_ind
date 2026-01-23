@@ -4,6 +4,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../../css/footer.css';
 import * as render from '../../js/util/render';
+import 'semantic-ui-css/semantic.min.css'; 
+import { Icon } from 'semantic-ui-react'; // Import Icon component
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import CloseButton from 'react-bootstrap/CloseButton';
+import * as mainAction from '../../js/main/mainFrontAction.js';
+
 
 export default function MainLayout() {
 
@@ -34,24 +41,29 @@ export default function MainLayout() {
                 </Container>
             </Navbar>
         </div>
+        <InputGroup className="main search box">
+            <Form.Control aria-label="Dollar amount (with dot and two decimal places)" placeholder='Search..' onChange={mainAction.searchInputValue} />
+            <InputGroup.Text><CloseButton /></InputGroup.Text>
+            <InputGroup.Text>🔍</InputGroup.Text>
+        </InputGroup>
         <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
             <main style={{ flex: 1 }}>
                 <Outlet />
             </main>
         </div>
         <div>
-            <nav class="bottom-nav">
-                <a href="#Market" class="nav-item" onClick={render.bottomBarNavigation}>
-                    <span class="icon">🏠</span>
-                    <span class="label">Market</span>
+            <nav className="bottom-nav">
+                <a href="#Market" className="nav-item" onClick={render.bottomBarNavigation}>
+                    <span className="icon">🏠</span>
+                    <span className="label">Market</span>
                 </a>
-                <a href="#search" class="nav-item">
-                    <span class="icon">🔍</span>
-                    <span class="label">Search</span>
+                <a href="#search" className="nav-item">
+                    <span className="icon"><Icon name='inbox' size='large' /></span>
+                    <span className="label">inbox</span>
                 </a>
-                <a href="#profile" class="nav-item" onClick={render.bottomBarNavigation}>
-                    <span class="icon">👤</span>
-                    <span class="label">My Info</span>
+                <a href="#profile" className="nav-item" onClick={render.bottomBarNavigation}>
+                    <span className="icon">👤</span>
+                    <span className="label">My Info</span>
                 </a>
             </nav>
         </div>

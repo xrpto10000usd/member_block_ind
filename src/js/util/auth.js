@@ -1,5 +1,5 @@
-import { redirect } from "react-router-dom"; 
+import { Navigate  } from "react-router-dom";
 
 export async function loginAction({ request, params }) {
-  return redirect("/main/mainFront");
+  return Navigate ("/member_block_ind/main/mainFront");
 }

@@ -5,7 +5,7 @@ import Badge from 'react-bootstrap/Badge';
 function membershipListCard() {
   return (
     <Card style={{ width: '100%' }}>
-      <Card.Img className="membershipListCardImage" variant="top" src="/images/dgi_logo.png" />
+      <Card.Img className="membershipListCardImage" variant="top" src="/member_block_ind/images/dgi_logo.png" />
       <Card.Body>
         <Card.Title>ABC Gym</Card.Title>
         <Card.Text>

@@ -10,7 +10,7 @@ export default function LoginLayout() {
             <Outlet />
         </main>
         <div className="footer-Image">
-          <Image src='/images/dgi_logo.png' size='mini' /> 
+          <Image src='/member_block_ind/images/dgi_logo.png' size='mini' /> 
         </div>
     </div>
   );
