@@ -30,9 +30,10 @@ function LoginFront() {
             <Button variant="secondary" style={{ marginLeft: "5%" , marginRight: "2%" }}>
               REGISTER
             </Button>
-            <a href='*'><span className="auth find">FORGOT MY ID </span></a>
+            <span>FORGOT MY </span>
+            <a href='*'><span className="auth find"> ID </span></a>
             <span>/</span>
-            <a href='*'><span className="auth find"> FORGOT MY Password </span></a>
+            <a href='*'><span className="auth find"> PASSWORD </span></a>
           </div>
         </Form>
   </div>

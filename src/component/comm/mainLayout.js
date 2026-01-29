@@ -51,7 +51,7 @@ export default function MainLayout() {
                 <Outlet />
             </main>
         </div>
-        <div>
+        <div id="bottom-nav-div">
             <nav className="bottom-nav">
                 <a href="#Market" className="nav-item" onClick={render.bottomBarNavigation}>
                     <span className="icon">🏠</span>
