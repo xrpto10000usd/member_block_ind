@@ -5,14 +5,13 @@ import '../../css/main.css';
 
 function memberShipSellRequestList() {
 
-  const mainMembershipCardType = 'sellRequest';
 
   return (
     <Stack gap={2}>
-      <MembershipListCard cardType={mainMembershipCardType}/>
-      <MembershipListCard cardType={mainMembershipCardType}/>
-      <MembershipListCard cardType={mainMembershipCardType}/>
-      <MembershipListCard cardType={mainMembershipCardType}/>
+      <MembershipListCard />
+      <MembershipListCard />
+      <MembershipListCard />
+      <MembershipListCard />
       <div>
         <Pagination className='pagination main membership'>
           <Pagination.Item key='memberShipSellListPaging_1' active={1}>

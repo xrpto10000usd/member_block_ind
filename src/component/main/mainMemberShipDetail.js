@@ -1,28 +1,30 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import * as comm from '../../js/util/comm.js';
 import Button from 'react-bootstrap/Button';
 import '../../css/main.css';
+import { useSelector } from 'react-redux';
+
 
 const style = {
     cardContainer : { width: '100%'}
 }
 
+
 const actionButtons =(cardType)=> {
 
     switch(cardType) {
-        case "inStock":
+        case "memstocks":
             return ( <Card.Body className='detail action buttons'>
                         <Button variant="outline-success">Sell</Button>
                         <Button variant="outline-info">Info</Button>
                     </Card.Body> );
-        case "sellRequest":
+        case "memRequests":
             return ( <Card.Body className='detail action buttons'>
                         <Button variant="outline-danger">Cancel Sell</Button>
                         <Button variant="outline-info">Info</Button>
                         <Button variant="outline-warning">Modify Invoice</Button>
                     </Card.Body> );
-        case "purchaseRequest":
+        case "memSellRequests":
             return ( <Card.Body className='detail action buttons'>
                         <Button variant="outline-danger">Cancel Purchase</Button>
                         <Button variant="outline-info">Info</Button>
@@ -35,7 +37,7 @@ const actionButtons =(cardType)=> {
 
 const detailBelowRendering = (cardType) => {
     switch(cardType) {
-        case "inStock":
+        case "memstocks":
             return ( <Card.Img variant="top" src="/member_block_ind/images/S3tdH6.png" className="mobile pass qr image" /> );
         default:
             return null;
@@ -43,11 +45,12 @@ const detailBelowRendering = (cardType) => {
 }
 
 function MainMemberShipDetail() {
-
-    const queryParam = comm.getQueryParam();
-    const cardType = queryParam.cardType;
-    const renderActionButton = actionButtons(cardType);
-    const belowRendering = detailBelowRendering(cardType);
+    // Redux에서 mainTabKey 값만 읽어옴 (state 변경 없음)
+    const mainTabKey = useSelector(state => state.mainTabKey);
+    const renderActionButton = actionButtons(mainTabKey);
+    const belowRendering = detailBelowRendering(mainTabKey);
+    // 필요하다면 mainTabKey를 활용
+    console.log('mainTabKey:', mainTabKey);
     return (
         <div className='mainMemberShipDetail'>
                 <Card style={style.cardContainer}>
@@ -65,9 +68,8 @@ function MainMemberShipDetail() {
                     {renderActionButton}
                     {belowRendering}
                 </Card>
-                
         </div>
-    )
+    );
 }
 
 export default MainMemberShipDetail;

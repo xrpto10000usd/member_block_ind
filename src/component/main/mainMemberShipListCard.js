@@ -3,11 +3,10 @@ import Stack from 'react-bootstrap/Stack';
 import Badge from 'react-bootstrap/Badge';
 import { useNavigate } from 'react-router-dom';
 
-function MainMembershipListCard(props) {
+function MainMembershipListCard() {
 
   const navigate = useNavigate();
-  const cardType = props.cardType;
-  const navigateUrl = '/member_block_ind/main/mainMemberShipDetail?cardType='+cardType;
+  const navigateUrl = '/member_block_ind/main/mainMemberShipDetail';
   
   return (
     <Card style={{ width: '100%' }} onClick={()=> { navigate(navigateUrl); }}>
