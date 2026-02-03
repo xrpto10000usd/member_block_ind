@@ -1,11 +1,31 @@
-import Stack from 'react-bootstrap/Stack';
+import  Stack  from 'react-bootstrap/Stack';
+import Pagination from 'react-bootstrap/Pagination';
 import MembershipListCard from './mainMemberShipListCard';
+import '../../css/main.css';
 
 function memberShipSellRequestList() {
+
+  const mainMembershipCardType = 'sellRequest';
+
   return (
-    <Stack gap={3}>
-      <MembershipListCard />
-      <MembershipListCard />
+    <Stack gap={2}>
+      <MembershipListCard cardType={mainMembershipCardType}/>
+      <MembershipListCard cardType={mainMembershipCardType}/>
+      <MembershipListCard cardType={mainMembershipCardType}/>
+      <MembershipListCard cardType={mainMembershipCardType}/>
+      <div>
+        <Pagination className='pagination main membership'>
+          <Pagination.Item key='memberShipSellListPaging_1' active={1}>
+            1
+          </Pagination.Item>
+          <Pagination.Item key='memberShipSellListPaging_2'>
+            2
+          </Pagination.Item>
+          <Pagination.Item key='memberShipSellListPaging_3'>
+            3
+          </Pagination.Item>
+      </Pagination>
+      </div>
     </Stack>
   );
 }

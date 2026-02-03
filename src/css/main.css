@@ -19,3 +19,31 @@
 .main.search.box {
     margin-top: 5px; margin-bottom: 5px;
 }
+
+#main_tab_control > li > button {
+    font-size: medium;
+    font-family: fantasy;
+}
+
+.newCount.badge.bg-danger {
+    position: absolute;
+    top: -1%;
+    left: 53%;
+}
+
+.pagination.main.membership {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  margin-top: 2%;
+}
+
+.detail.action.buttons.card-body > button {
+    margin-left: 6%;
+    width: 23%;
+}
+.mobile.pass.qr.image {
+    width: 60%;
+    height: 60%;
+    margin-left: 20%;
+}

@@ -4,6 +4,7 @@ import Image from 'react-bootstrap/Image';
 import '../../css/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 function LoginFront() {
 
   return (

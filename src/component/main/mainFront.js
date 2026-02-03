@@ -3,6 +3,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import MemberShipStockList from './mainMemberShipStockList';
 import MemberShipPurchaseRequestList from './mainMemberShipPurchaseRequestList';
+import MemberShipSellRequestList from './mainMemberShipSellRequestList';
 import '../../css/main.css';
 
 export default function MainFront() {
@@ -11,18 +12,19 @@ export default function MainFront() {
     
     return (
         <div>
-            <Tabs id="controlled-tab-example"
+            <Tabs id="main_tab_control"
                   activeKey={key}
                   onSelect={(k) => setKey(k)}
                   className="mb-3" 
                   style={{ marginLeft : "0px" }}>
-                  <Tab eventKey="memstocks" title="Your Memberships" className="main-tab-header-contents">
+                  <Tab eventKey="memstocks" title="I HAVE" className="main-tab-header-contents">
                         <MemberShipStockList />
                   </Tab>
-                  <Tab eventKey="memRequests" title="Purchase Request" className="main-tab-header-contents">
+                  <Tab eventKey="memRequests" title="I WANT" className="main-tab-header-contents">
                         <MemberShipPurchaseRequestList />
                   </Tab>
-                  <Tab eventKey="memSellRequests" title="Selling" className="main-tab-header-contents">
+                  <Tab eventKey="memSellRequests" title="I SELL" className="main-tab-header-contents">
+                        <MemberShipSellRequestList />
                   </Tab>
             </Tabs>
         </div>

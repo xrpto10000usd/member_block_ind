@@ -1,10 +1,16 @@
 import Card from 'react-bootstrap/Card';
 import Stack from 'react-bootstrap/Stack';
 import Badge from 'react-bootstrap/Badge';
+import { useNavigate } from 'react-router-dom';
 
-function membershipListCard() {
+function MainMembershipListCard(props) {
+
+  const navigate = useNavigate();
+  const cardType = props.cardType;
+  const navigateUrl = '/member_block_ind/main/mainMemberShipDetail?cardType='+cardType;
+  
   return (
-    <Card style={{ width: '100%' }}>
+    <Card style={{ width: '100%' }} onClick={()=> { navigate(navigateUrl); }}>
       <Card.Img className="membershipListCardImage" variant="top" src="/member_block_ind/images/dgi_logo.png" />
       <Card.Body>
         <Card.Title>ABC Gym</Card.Title>
@@ -21,4 +27,4 @@ function membershipListCard() {
   );
 }
 
-export default membershipListCard;
+export default MainMembershipListCard;
