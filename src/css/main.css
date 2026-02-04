@@ -47,3 +47,16 @@
     height: 60%;
     margin-left: 20%;
 }
+.documents.upload.request {
+    margin-top: 4%;
+}
+
+.documents.upload.request > .list-group-item {
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.purchase.request.status {
+    width: 70%;
+}

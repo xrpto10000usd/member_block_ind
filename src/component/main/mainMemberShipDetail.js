@@ -3,7 +3,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import '../../css/main.css';
 import { useSelector } from 'react-redux';
-
+import Toast from 'react-bootstrap/Toast';
 
 const style = {
     cardContainer : { width: '100%'}
@@ -20,13 +20,13 @@ const actionButtons =(cardType)=> {
                     </Card.Body> );
         case "memRequests":
             return ( <Card.Body className='detail action buttons'>
-                        <Button variant="outline-danger">Cancel Sell</Button>
+                        <Button variant="outline-danger">Cancel Purchase</Button>
                         <Button variant="outline-info">Info</Button>
                         <Button variant="outline-warning">Modify Invoice</Button>
                     </Card.Body> );
         case "memSellRequests":
             return ( <Card.Body className='detail action buttons'>
-                        <Button variant="outline-danger">Cancel Purchase</Button>
+                        <Button variant="outline-danger">Cancel Sell</Button>
                         <Button variant="outline-info">Info</Button>
                         <Button variant="outline-warning">Modify Invoice</Button>
                     </Card.Body> );
@@ -39,18 +39,51 @@ const detailBelowRendering = (cardType) => {
     switch(cardType) {
         case "memstocks":
             return ( <Card.Img variant="top" src="/member_block_ind/images/S3tdH6.png" className="mobile pass qr image" /> );
+        case "memRequests":
+            return (<Card.Body>
+                        <Toast  className="d-inline-block m-1 purchase request status"
+                                bg='Info'
+                                key='thisCardTypeABC'
+                                >
+                            <Toast.Header>
+                                <img
+                                src="holder.js/20x20?text=%20"
+                                className="rounded me-2"
+                                alt=""
+                                />
+                                <strong className="me-auto">Current Request Stage</strong>
+                                <small>Due : 2026-02-27</small>
+                            </Toast.Header>
+                            <Toast.Body className='Info'>
+                            ABC Gym requested to upload following documents...
+                            </Toast.Body>
+                        </Toast>
+                        <ListGroup className="list-group-flush documents upload request">
+                            <ListGroup.Item>
+                                <span>passport photo</span>
+                                <Button variant="primary" size="sm">
+                                    Upload with Camera
+                                </Button>
+                            </ListGroup.Item>
+                            <ListGroup.Item>
+                                <span>proof of residence</span>
+                                <Button variant="primary" size="sm">
+                                    Upload with Camera
+                                </Button>
+                            </ListGroup.Item>
+                        </ListGroup>
+                    </Card.Body>);
         default:
             return null;
     }
 }
 
 function MainMemberShipDetail() {
-    // Redux에서 mainTabKey 값만 읽어옴 (state 변경 없음)
+
     const mainTabKey = useSelector(state => state.mainTabKey);
     const renderActionButton = actionButtons(mainTabKey);
     const belowRendering = detailBelowRendering(mainTabKey);
-    // 필요하다면 mainTabKey를 활용
-    console.log('mainTabKey:', mainTabKey);
+
     return (
         <div className='mainMemberShipDetail'>
                 <Card style={style.cardContainer}>
@@ -58,7 +91,7 @@ function MainMemberShipDetail() {
                     <Card.Body>
                         <Card.Title>ABC Gym</Card.Title>
                         <Card.Text>
-                        ABC Gym 
+                        ABC Gym full membership
                         </Card.Text>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
